@@ -18,7 +18,7 @@ public class DrinkAndDelightController {
 	ServiceI service;
 	  @GetMapping("getALlSPecs") 
 	  public List<RawMaterialSpecs> getAllSpecs() throws Exception {
-	
+	System.out.println("");
 	   return service.getallSpecs();
 	  }  
 	  @GetMapping("getName/{rmsid}") 
