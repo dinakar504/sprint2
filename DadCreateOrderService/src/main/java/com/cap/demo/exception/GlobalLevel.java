@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class GlobalLevelException {
+public class GlobalLevel{
 	@ResponseBody
 	@ResponseStatus(value=HttpStatus.OK)
 	@ExceptionHandler(UnsuccessfulOperation.class) 
-	public ResponseEntity<String> Exception(UnsuccessfulOperation e) { return new
-	  ResponseEntity<String>(e.getMessage(), HttpStatus.OK); }
+	public ResponseEntity<String> unsuccessfulOperation(UnsuccessfulOperation e) { return new
+	  ResponseEntity<>(e.getMessage(), HttpStatus.OK); }
 	 
 }

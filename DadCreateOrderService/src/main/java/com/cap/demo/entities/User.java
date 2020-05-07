@@ -1,4 +1,4 @@
-package com.cap.demo.Entities;
+package com.cap.demo.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

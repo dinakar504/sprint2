@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cap.demo.Entities.SupplierEntity;
+import com.cap.demo.entities.SupplierEntity;
 import com.cap.demo.service.ServiceI;
 
 @RestController
@@ -16,7 +16,7 @@ public class DrinkAndDelightController {
 	@Autowired
 	ServiceI service;
 		  @GetMapping("getAllSup") 
-	  public List<SupplierEntity> getAllSup() throws Exception {
+	  public List<SupplierEntity> getAllSup()  {
 	
 	   return service.getsup();
 	  }

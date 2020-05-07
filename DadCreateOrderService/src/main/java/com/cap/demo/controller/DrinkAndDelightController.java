@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.cap.demo.Entities.RawMAterialOrderEntity;
-import com.cap.demo.Entities.RawMaterialSpecs;
+import com.cap.demo.entities.RawMAterialOrderEntity;
 import com.cap.demo.exception.UnsuccessfulOperation;
 import com.cap.demo.service.DadServiceI;
 
@@ -26,24 +25,28 @@ public class DrinkAndDelightController {
 	@Autowired
 	RestTemplate rest;
 	 @GetMapping("getAll/{uid}") 
-	  public List<RawMAterialOrderEntity> getAllOrders(@PathVariable int uid) throws Exception {
+	  public List<RawMAterialOrderEntity> getAllOrders(@PathVariable int uid)  {
 	
 	   return service.getAllOrders(uid);
 	  }
 	@PostMapping("/orderCreation")
-	public ResponseEntity<String> orderCreation(@RequestBody RawMAterialOrderEntity emp)
+	public ResponseEntity<RawMAterialOrderEntity> orderCreation(@RequestBody RawMAterialOrderEntity order)
 	{
-		RawMaterialSpecs info=rest.getForObject("http://localhost:1111/getName/"+emp.getRmsid(),RawMaterialSpecs.class);
-		if(info==null)
-		{
-			throw new UnsuccessfulOperation("unsuccesful in Creating order");
-		}
-		else
-		{
-			RawMAterialOrderEntity e=service.orderCreation(emp,info);
-			ResponseEntity<String>responseEntity = new ResponseEntity<String>("Succefully ordered", HttpStatus.OK);
-			return responseEntity;
-		}
+		
+		
+			RawMAterialOrderEntity response=service.orderCreation(order);
+			if(response==null)
+			{
+				throw new UnsuccessfulOperation("unsuccesful in Creating order");
+			}
+			else
+			{
+			
+				return	new ResponseEntity<RawMAterialOrderEntity>(response, HttpStatus.OK);
+				
+			}
+			
+		
 		
 		
 	}

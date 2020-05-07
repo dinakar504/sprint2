@@ -1,10 +1,12 @@
-package com.cap.demo.Entities;
+package com.cap.demo.entities;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "RAWMATERIALSPECS")
@@ -43,6 +45,8 @@ public int getRmsid() {
 private int rmsid;
 private String rmname;
 private int price_p_u;
+@Temporal(TemporalType.DATE)
 private Date expirydat;
+@Temporal(TemporalType.DATE)
 private Date manudate;
 }

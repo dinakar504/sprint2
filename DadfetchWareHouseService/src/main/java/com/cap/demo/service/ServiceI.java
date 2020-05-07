@@ -2,10 +2,10 @@ package com.cap.demo.service;
 
 import java.util.List;
 
-import com.cap.demo.Entities.WareHouse;
+import com.cap.demo.entities.WareHouse;
 
 public interface ServiceI {
 
-	List<WareHouse> getALldis();
+	List<WareHouse> getAlldis();
 
 }
