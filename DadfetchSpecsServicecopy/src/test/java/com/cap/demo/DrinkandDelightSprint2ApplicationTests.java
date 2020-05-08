@@ -1,30 +1,28 @@
 package com.cap.demo;
 
-import static org.junit.Assert.assertNotEquals;
+
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.client.RestTemplate;
 
 import com.cap.demo.Entities.RawMaterialSpecs;
+import com.cap.demo.service.ServiceI;
 
 @SpringBootTest
-class DrinkandDelightSprint2ApplicationTests {
+public class DrinkandDelightSprint2ApplicationTests {
 
+	@Autowired
+	ServiceI service;
+	
 	@Test
-	void contextLoads() {
-		
-	}
-	@Test
-	void test1()
+	public void test1()
 	{
-
-		RestTemplate rest=new RestTemplate();
-	List<RawMaterialSpecs> info=(List<RawMaterialSpecs>) rest.getForObject("http://localhost:1111/getALlSPecs",RawMaterialSpecs.class);
-
-	     assertNotEquals(info,null );
+		List<RawMaterialSpecs> list = service.getallSpecs();
+		Assertions.assertEquals(2, list.size());
 	}
 
 }

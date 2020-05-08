@@ -7,13 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cap.demo.dao.RawMAterialOrderDAO;
+import com.cap.demo.dao.ProductOrderDAO;
 import com.cap.demo.entities.ProductOrderEntity;
 
 @Service
 public class ServiceImpl implements DadServiceI{
 	@Autowired
-RawMAterialOrderDAO dao;
+ProductOrderDAO dao;
 	
     @Override
 	public List<ProductOrderEntity> getAllOrders(int uid)

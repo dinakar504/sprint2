@@ -10,7 +10,7 @@ import com.cap.demo.entities.ProductOrderEntity;
 
 
 @Repository
-public interface RawMAterialOrderDAO extends JpaRepository<ProductOrderEntity, Integer>{
+public interface ProductOrderDAO extends JpaRepository<ProductOrderEntity, Integer>{
 @Query("SELECT p FROM ProductOrderEntity p where p.userid=?1")
 public List<ProductOrderEntity> getAllOrders(int uid);
 @Query("SELECT p.dateoford,p.dateofdel,p.deliveryStus FROM ProductOrderEntity p where p.orderid=?1")
