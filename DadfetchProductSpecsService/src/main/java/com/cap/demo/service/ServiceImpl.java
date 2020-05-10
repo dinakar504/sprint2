@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cap.demo.Entities.ProductSpecs;
 import com.cap.demo.dao.ProductSpecsDao;
+import com.cap.demo.entities.ProductSpecs;
 
 @Service
 public class ServiceImpl implements ServiceI{

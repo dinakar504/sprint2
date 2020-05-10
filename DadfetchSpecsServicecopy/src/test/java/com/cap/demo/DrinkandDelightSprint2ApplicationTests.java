@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.cap.demo.Entities.RawMaterialSpecs;
+import com.cap.demo.entities.RawMaterialSpecs;
 import com.cap.demo.service.ServiceI;
 
 @SpringBootTest

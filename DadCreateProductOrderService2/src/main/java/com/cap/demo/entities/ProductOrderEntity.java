@@ -12,6 +12,13 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "PRODUCTORDER")
 public class ProductOrderEntity {
+	@Override
+	public String toString() {
+		return "ProductOrderEntity [orderid=" + orderid + ", name=" + name + ", pid=" + pid + ", supplierid="
+				+ supplierid + ", quanvalue=" + quanvalue + ", quanunit=" + quanunit + ", dateoford=" + dateoford
+				+ ", dateofdel=" + dateofdel + ", totalprice=" + totalprice + ", deliveryStus=" + deliveryStus
+				+ ", warehouseid=" + warehouseid + ", userid=" + userid + "]";
+	}
 	@Id
 	@GeneratedValue
 	private int orderid;

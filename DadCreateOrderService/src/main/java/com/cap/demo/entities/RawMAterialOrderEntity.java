@@ -126,5 +126,13 @@ public class RawMAterialOrderEntity {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
+
+	@Override
+	public String toString() {
+		return "RawMAterialOrderEntity [orderid=" + orderid + ", name=" + name + ", rmsid=" + rmsid + ", supplierid="
+				+ supplierid + ", quanvalue=" + quanvalue + ", quanunit=" + quanunit + ", dateoford=" + dateoford
+				+ ", dateofdel=" + dateofdel + ", totalprice=" + totalprice + ", deliveryStus=" + deliveryStus
+				+ ", warehouseid=" + warehouseid + ", userid=" + userid + "]";
+	}
 	
 }

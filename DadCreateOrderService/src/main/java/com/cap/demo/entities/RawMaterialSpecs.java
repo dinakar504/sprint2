@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "RAWMATERIALSPECS")
+@Table(name = "RAWMATERIALSPECS1")
 public class RawMaterialSpecs {
 public int getRmsid() {
 		return rmsid;
@@ -23,11 +23,12 @@ public int getRmsid() {
 	public void setRmname(String rmname) {
 		this.rmname = rmname;
 	}
-	public int getPrice_p_u() {
-		return price_p_u;
+	
+	public int getPricePerUnit() {
+		return pricePerUnit;
 	}
-	public void setPrice_p_u(int price_p_u) {
-		this.price_p_u = price_p_u;
+	public void setPricePerUnit(int pricePerUnit) {
+		this.pricePerUnit = pricePerUnit;
 	}
 	public Date getExpirydat() {
 		return expirydat;
@@ -44,7 +45,7 @@ public int getRmsid() {
 	@Id
 private int rmsid;
 private String rmname;
-private int price_p_u;
+private int pricePerUnit;
 @Temporal(TemporalType.DATE)
 private Date expirydat;
 @Temporal(TemporalType.DATE)
